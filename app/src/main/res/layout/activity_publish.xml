@@ -9,4 +9,89 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.a481.lostfound.PublishActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kind"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/textView1"
+        android:layout_alignBottom="@+id/Kind"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/textView1"
+        android:maxLines="4"
+        android:id="@+id/Kind"
+        android:inputType="text"
+        android:labelFor="@id/Kind"
+        android:layout_alignParentTop="true"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/publish_sure"
+        android:textSize="30sp"
+        android:id="@+id/Enter_Publish"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/Time"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:id="@+id/Time"
+        android:layout_below="@+id/Kind"
+        android:layout_toEndOf="@+id/textView1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/place"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/textView4"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:id="@+id/Place"
+        android:layout_below="@+id/textView2"
+        android:layout_toEndOf="@+id/textView3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/Place"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:hint="@string/hint1"
+        android:id="@+id/Description"
+        android:layout_alignTop="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
+
 </RelativeLayout>
