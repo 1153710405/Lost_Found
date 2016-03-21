@@ -2,8 +2,10 @@
     <string name="app_name">Lost&amp;Found</string>
     <string name="hint1">可适当隐藏信息</string>
     <string name="publish_sure">确认发布</string>
+    <string name="publish_enter">我要发布</string>
     <string name="description">详细描述:</string>
     <string name="time">时间:</string>
     <string name="place">地点:</string>
     <string name="kind">种类:</string>
+    <string name="picture_upload">上传图片</string>
 </resources>

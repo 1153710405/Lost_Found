@@ -12,10 +12,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="我要发布"
+        android:text="@string/publish_enter"
         android:id="@+id/User_Publish"
-        android:layout_marginTop="91dp"
+        android:textSize="20sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textSize="20dp" />
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/item_View"
+        android:layout_below="@+id/User_Publish"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
