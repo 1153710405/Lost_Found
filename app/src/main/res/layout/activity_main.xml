@@ -15,6 +15,15 @@
         android:text="@string/publish_enter"
         android:id="@+id/User_Publish"
         android:textSize="20sp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Login"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/login"
+        android:id="@+id/Login"
+        android:textSize="20sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 

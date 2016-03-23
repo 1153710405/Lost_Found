@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -31,15 +32,24 @@ public class MainActivity extends Activity {
 
     private List<Item> ItemList = new ArrayList<>();
 
+    private BmobUser user;
+
+
+    private Button user_publish;
+
+    private Button login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bmob.initialize(this, "63cb3a4e63bd82bb7b18ace75b24029e");
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        user_publish = (Button) findViewById(R.id.User_Publish);
+        login = (Button) findViewById(R.id.Login);
+        initItems();
 
-        Button button1 = (Button) findViewById(R.id.User_Publish);
-        button1.setOnClickListener(new View.OnClickListener() {
+        user_publish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent Start_publish = new Intent(MainActivity.this, PublishActivity.class);
@@ -47,8 +57,18 @@ public class MainActivity extends Activity {
             }
         });
 
-
-        initItems();
+        user = BmobUser.getCurrentUser(MainActivity.this);
+        if (user != null) {
+            Toast.makeText(MainActivity.this, "你已登录", Toast.LENGTH_SHORT).show();
+        } else {
+            login.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent login = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(login);
+                }
+            });
+        }
     }
 
     private void initItems() {
@@ -58,7 +78,7 @@ public class MainActivity extends Activity {
             @Override
             public void onSuccess(List<Item> list) {
                 for (Item aitem : list) {
-                    Log.d("MainActivity", aitem.getUserID().toString());
+                    Log.d("MainActivity", aitem.getUsername());
                     Log.d("MainActivity", aitem.getKind());
                     Log.d("MainActivity", aitem.getTime());
                     Log.d("MainActivity", aitem.getPlace());
@@ -72,6 +92,16 @@ public class MainActivity extends Activity {
                 ItemAdapter adapter = new ItemAdapter(MainActivity.this, R.layout.item_layout, ItemList);
                 ListView listview = (ListView) findViewById(R.id.item_View);
                 listview.setAdapter(adapter);
+                listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Bundle bundle = new Bundle();
+                        bundle.putParcelable("item", ItemList.get(position));
+                        Intent item_display = new Intent(MainActivity.this, ItemActivity.class);
+                        item_display.putExtras(bundle);
+                        startActivity(item_display);
+                    }
+                });
             }
 
             @Override

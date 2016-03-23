@@ -7,5 +7,17 @@
     <string name="time">时间:</string>
     <string name="place">地点:</string>
     <string name="kind">种类:</string>
-    <string name="picture_upload">上传图片</string>
+    <string name="image_upload">上传图片</string>
+    <string name="image_add">添加图片</string>
+    <string name="login">注册/登录</string>
+    <string name="username">用户名</string>
+    <string name="password1">密码</string>
+    <string name="password2">确认密码</string>
+    <string name="phonenumber">手机号</string>
+    <string name="register">注册</string>
+    <string name="signin">登录</string>
+    <string name="tip_username">用户名为8—16个字符，必须以英文字母开头，且仅支持数字，英文，空格，横线及下划线字符</string>
+    <string name="tip_password1">密码为8—16个字符，且仅支持数字，英文，空格，横线及下划线字符</string>
+    <string name="tip_password2">*两次输入密码不一致！</string>
+    <string name="title_activity_item__display">Item_Display</string>
 </resources>
